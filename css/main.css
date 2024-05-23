@@ -1,0 +1,73 @@
+body
+{
+    background-color: #F7ECDE;
+    font-family: "PT Sans Caption", sans-serif;
+
+}
+
+h1,h3,h4,h5,h6{
+    font-family: "Pacifico", cursive;
+    font-size: 3rem;
+
+}
+
+.seperated-line
+{
+    border-bottom: dotted 2px #000;
+}
+
+h1
+{
+    display: inline-block;
+    transition: height 1s ;
+}
+h1::after
+{
+    content: '';
+    background-color:#FEC260 ;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    bottom: 45px;
+
+    transition: height 1s ;
+
+ 
+}
+
+h1:hover::after
+{
+    height: 30%;
+}
+
+.book-mark-hedaer:hover .hedaer-back
+{
+
+    height: 50%;
+}
+.book-icon span
+{
+    font-size: 25px;
+    background: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.book-icon i:nth-child(1)
+{
+    color: #40A55B;
+}
+
+.book-icon i:last-child
+{
+    color: #B2AB49;
+}
+
+.form-control:focus
+{
+    border-color: rgba(254, 194, 96,.7);
+    box-shadow: 0 0 0 .25rem rgba(254, 194, 96,.3)
+}
