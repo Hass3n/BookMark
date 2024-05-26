@@ -6,6 +6,8 @@ var BookMarkurl=document.getElementById('BookMarkUrl');
 var BookMarkBtn=document.getElementById('btn');
 
 var tbody=document.getElementById('tbody');
+var close =document.getElementById('close');
+
 
 
 /**add Item */
@@ -35,6 +37,13 @@ if(localStorage.getItem('list')!=null)
 function addBookMark()
 {
 
+
+  if(validationName() &&validationUrl)
+    {
+
+        
+  BookMarkBtn.removeAttribute('data-bs-toggle');
+  BookMarkBtn.removeAttribute('data-bs-target');
   var arrayObj={
 
     bookMrakname:bookMrakName.value,
@@ -51,6 +60,26 @@ function addBookMark()
 
 }
 
+else
+{
+
+        
+  BookMarkBtn.setAttribute('data-bs-toggle','modal');
+  BookMarkBtn.setAttribute('data-bs-target','#exampleModal');
+  
+}
+
+}
+
+
+/*********************close dialog button*********** */
+close.onclick=function()
+{
+
+  BookMarkBtn.removeAttribute('data-bs-toggle');
+  BookMarkBtn.removeAttribute('data-bs-target');
+
+}
 
 /**********clear form************ */
 function clearform()
@@ -100,8 +129,8 @@ function Display(bookList)
       tableData+=` <tr class="text-center">
       <td >${i+1}</td>
       <td>${bookList[i].bookMrakname}</td>
-      <td>
-        <button class="btn btn-success" type="button" onclick="visitUrl(${i})">
+      <td  >
+        <button class="mx-auto btn btn-success d-flex gap-2 justify-content-center  align-items-center" type="button" onclick="visitUrl(${i})">
           <i class="fa-sharp fa-solid fa-eye"></i>
 
           Visit
@@ -109,8 +138,8 @@ function Display(bookList)
 
        
       </td>
-      <td>
-        <button class="btn btn-danger" type="button" onclick="Delete(${i})">
+      <td  >
+        <button class="btn mx-auto btn-danger d-flex gap-2 justify-content-center  align-items-center" type="button" onclick="Delete(${i})">
           <i class=" fa-solid fa-trash"></i>
 
           Delete
@@ -143,13 +172,15 @@ function validationName()
  
 
       bookMrakName.classList.add('is-valid');
-      bookMrakName.classList.remove('is-invalid')
+      bookMrakName.classList.remove('is-invalid');
+      return true;
     }
     
     else
     {
       bookMrakName.classList.remove('is-valid');
-      bookMrakName.classList.add('is-invalid')
+      bookMrakName.classList.add('is-invalid');
+      return false;
     }
 
 }
@@ -166,12 +197,17 @@ function validationUrl()
 
       BookMarkurl.classList.add('is-valid');
       BookMarkurl.classList.remove('is-invalid')
+
+      return true;
     }
     
     else
     {
       BookMarkurl.classList.remove('is-valid');
-      BookMarkurl.classList.add('is-invalid')
+      BookMarkurl.classList.add('is-invalid');
+
+      return false;
+
     }
 
 }

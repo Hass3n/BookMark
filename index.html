@@ -23,64 +23,99 @@
 
 <body>
  
- <div class="container  ">
- <div class="bookmark-title text-center">
-  <h1 class=" fw-bolder py-5 position-relative">Bookmarker</h1>
-
-  <div class="seperated-line "></div>
-  <div class="book-icon py-4">
-    <i class="fa-solid fa-bookmark fa-xl "></i>
-    <span class="fw-bold px-2">Bookmark your favorite sites</span>
-    <i class="fa-solid fa-bookmark fa-xl"></i>
-
-
-  </div>
-
- </div>
-  <form action="">
-   <div class="bookmarlname mx-3">
-    <i class="fa-sharp fa-solid fa-book-bookmark"></i>
-    <label for="bookMarkName" class="form-label fw-bold px-1">Site Name</label>
-    <input type="text" id="bookMarkName" class="form-control p-2 " aria-describedby="textHelpBlock" placeholder="Bookmark Name" oninput="validationName()">
+ <div class="container">
+  <div class="bookmark-title text-center">
+    <h1 class=" fw-bolder py-5 position-relative">Bookmarker</h1>
+  
+    <div class="seperated-line "></div>
+    <div class="book-icon py-4">
+      <i class="fa-solid fa-bookmark fa-xl "></i>
+      <span class="fw-bold px-2">Bookmark your favorite sites</span>
+      <i class="fa-solid fa-bookmark fa-xl"></i>
+  
   
     </div>
-    <div class="bookmarlurl mx-3 my-4">
+  
+   </div>
+    <form action="">
+     <div class="bookmarlname mx-3">
       <i class="fa-sharp fa-solid fa-book-bookmark"></i>
-      <label for="BookMarkUrl" class="form-label fw-bold px-1">Site URL</label>
-      <input type="text" id="BookMarkUrl" class="form-control p-2" aria-describedby="textHelpBlock" placeholder="Website URL" oninput="validationUrl()">
+      <label for="bookMarkName" class="form-label fw-bold px-1">Site Name</label>
+      <input type="text" id="bookMarkName" class="form-control p-2 " aria-describedby="textHelpBlock" placeholder="Bookmark Name" oninput="validationName()">
     
       </div>
-
-      <div class="btn-mark text-center">
-        <button type="button" class="btn btn-danger px-5 py-2" id="btn">Submit</button>
-
-      </div>
-  </form>
-
-  <div class="seperated-line  my-4"></div>
-
-  <!-----------------table------------------------------------->
-
-  <table class="table">
-    <thead>
-      <tr class="text-center">
-        <th scope="col">Index</th>
-        <th scope="col">Website Name</th>
-        <th scope="col">Visit</th>
-        <th scope="col">Delete</th>
-      </tr>
-
-    </thead>
-
-    <tbody id="tbody">
+      <div class="bookmarlurl mx-3 my-4">
+        <i class="fa-sharp fa-solid fa-book-bookmark"></i>
+        <label for="BookMarkUrl" class="form-label fw-bold px-1">Site URL</label>
+        <input type="text" id="BookMarkUrl" class="form-control p-2" aria-describedby="textHelpBlock" placeholder="Website URL" oninput="validationUrl()">
+      
+        </div>
+  
+        <div class="btn-mark text-center">
+          <button type="button" class="btn btn-danger px-5 py-2" id="btn">Submit</button>
+  
+        </div>
+    </form>
+  
+    <div class="seperated-line  my-4"></div>
+  
+    <!-----------------table------------------------------------->
+  
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Indexs</th>
+          <th scope="col">Website Name</th>
+          <th scope="col">Visit</th>
+          <th scope="col">Delete</th>
+        </tr>
+  
+      </thead>
+  
+      <tbody id="tbody">
+       
      
-   
-    </tbody>
-   
-  </table>
+      </tbody>
+     
+    </table>
+  
+
+
 
  </div>
- 
+ <!-- Dialog valiadtion  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+
+        <span class="ms-1 bg-warning"></span>
+        <span class="ms-1 bg-primary"></span>
+        <span class="ms-1 bg-info"></span>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close"></button>
+      </div>
+      <div class="dialog-header px-5 py-3">
+      <p>Site Name or Url is not valid, Please follow the rules below :</p>
+      </div>
+      <div class="dialog-header-content  px-5 py-3">
+
+      
+        <div class="mb-2 d-flex align-items-baseline">
+          <i class="fa-solid fa-arrow-right   fa-border"></i>
+          <span class="ms-2">Site name must contain at least 3 characters
+          </span>
+        </div>
+  
+        <div class="d-flex align-items-baseline">
+          <i class="fa-solid fa-arrow-right   fa-border"></i>
+          <span class="ms-2">Site URL must be a valid one
+          </span>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
   <script src="js/main.js"></script>
 
 
