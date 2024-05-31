@@ -38,7 +38,7 @@ function addBookMark()
 {
 
 
-  if(validationName() &&validationUrl)
+  if(validationName() &&validationUrl())
     {
 
         
